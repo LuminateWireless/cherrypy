@@ -24,6 +24,10 @@ cache: pip
 env:
 - WEBTEST_INTERACTIVE=false
 
+os:
+- linux
+- osx
+
 # TODO: consider installing optional dependencies to run skipped tests
 install: pip install -e .
 script: nosetests
@@ -32,6 +36,7 @@ deploy:
   provider: pypi
   on:
     tags: true
+    os: linux
     python: 3.5
   user: jaraco
   password:
