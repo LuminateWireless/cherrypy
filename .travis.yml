@@ -25,7 +25,7 @@ env:
 - WEBTEST_INTERACTIVE=false
 
 # TODO: consider installing optional dependencies to run skipped tests
-install: pip install -e .
+install: pip install -e .[test_tools,routes_dispatcher]
 script: nosetests
 
 deploy:
