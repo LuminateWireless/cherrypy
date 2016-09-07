@@ -32,6 +32,10 @@ os:
 - linux
 - osx
 
+before_install:
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then; then; brew update; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then; then; brew install python3; fi
+
 # TODO: consider installing optional dependencies to run skipped tests
 install: pip install -e .
 script: nosetests
